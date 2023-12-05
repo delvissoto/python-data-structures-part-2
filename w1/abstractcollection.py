@@ -31,3 +31,9 @@ class AbstractCollection(object):
                 if item != next(otherIter):
                     return False
             return True
+        def count(self, item):
+            total = 0
+            for nextItem in self:
+                if nextItem == item:
+                    total +=1
+                return total
