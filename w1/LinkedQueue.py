@@ -27,6 +27,16 @@ class linkedQueue(AbstractCollection):
         if self.isEmpty():
             self.front = newNode
         self.rear +=1
+        
+    def pop(self):
+        if (self.isEmpty()):
+            raise KeyError("The queue is empty ")
+        oldItem = self.front.data
+        if self.fron is None:
+            self.rear = None
+        self.size -=1
+        return oldItem
+        
             
     
  
