@@ -1,10 +1,10 @@
 from abstractcollection import AbstractCollection
 from node import Node
-class linkedQueue(AbstractCollection):
-    def  __inti__(self, sorceCollection):
+class LinkedQueue(AbstractCollection):
+    def  __inti__(self, SourceCollection = None):
         self.fron = None
         self.rear = None
-        AbstractCollection.__init__(self, sorceCollection)
+        AbstractCollection.__init__(self, SourceCollection)
         
     def __iter__(self):
         cursor = self.front
@@ -26,7 +26,10 @@ class linkedQueue(AbstractCollection):
         newNode = Node(item, None)
         if self.isEmpty():
             self.front = newNode
-        self.rear +=1
+        else:
+            self.rear.next = newNode
+        self.rear = newNode
+        self.size += 1
         
     def pop(self):
         if (self.isEmpty()):
